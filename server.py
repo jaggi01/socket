@@ -16,7 +16,7 @@ def relay_data(source_socket, target_socket, source_name, target_name):
             if not data:  # Connection closed
                 print(f"{source_name} disconnected")
                 break
-            print(f"Data received from {source_name}: {data.decode('utf-8')}")
+            print(f"Data received from {source_name}: {data}")
             if target_socket:  # If the target socket exists, send the data
                 target_socket.sendall(data)
     except Exception as e:
